@@ -1,54 +1,122 @@
-# React + TypeScript + Vite
+# 📝 Todo Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack Todo Application built with **React** (Frontend) and **Spring Boot** (Backend). This project demonstrates a simple task management system with CRUD functionality.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add, update, delete, and retrieve todos
+- Task status management: `NEW`, `IN_PROGRESS`, `COMPLETED`
+- RESTful API with Spring Boot
+- React-based UI with state management using hooks
+- Cross-origin support for seamless frontend-backend integration
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Frontend**:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- React
+- TypeScript
+- Vite or Create React App (your preference)
+
+**Backend**:
+
+- Spring Boot
+- Java
+- JPA (Hibernate)
+- Lombok
+- Jakarta Validation
+
+## 🗂️ Project Structure
+
+```
+├── backend/
+│   ├── Controller/
+│   │   └── TaskController.java
+│   ├── models/
+│   │   ├── Task.java
+│   │   └── TaskStatus.java
+│   └── service/
+│       └── TaskService.java
+├── frontend/
+│   └── Todo.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Backend
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Navigate to the `backend` directory:
+
+   ```bash
+   cd backend
+   ```
+
+2. Build and run the Spring Boot application:
+
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+
+3. API will be available at: `http://localhost:8080/api/tasks`
+
+### Frontend
+
+1. Navigate to the `frontend` directory:
+
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the React development server:
+
+   ```bash
+   npm start
+   ```
+
+4. Frontend runs on: `http://localhost:3000`
+
+## 📬 API Endpoints
+
+| Method | Endpoint          | Description          |
+| ------ | ----------------- | -------------------- |
+| GET    | `/api/tasks`      | Get all tasks        |
+| GET    | `/api/tasks/{id}` | Get task by ID       |
+| POST   | `/api/tasks`      | Create a new task    |
+| PUT    | `/api/tasks/{id}` | Update existing task |
+| DELETE | `/api/tasks/{id}` | Delete task by ID    |
+
+## 🧪 Example Task Object
+
+```json
+{
+  "title": "Write Documentation",
+  "description": "Prepare README for GitHub",
+  "status": "IN_PROGRESS"
+}
 ```
+
+## 📌 TODOs
+
+- Improve error handling in frontend
+- Add filtering/sorting functionality
+- Add user authentication (optional future feature)
+
+## 🤝 Contributing
+
+Feel free to fork this repo, make changes, and submit a pull request. Contributions are welcome!
+Contributions are welcome! Fork the repo, create a feature branch, and submit a pull request.
+
+📧 Contact: [gopi.maganti1998@gmail.com](mailto:gopi.maganti1998@gmail.com)  
+📌 GitHub: [github.com/gopi-maganti](https://github.com/gopi-maganti)
+
+## 📃 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
